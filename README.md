@@ -1,3 +1,3 @@
-:video_game: Watch Cats
+# 🎮 Watch Cats
 
-Jogo sobre o tema de Cibersegurança, desenvolvido em C# como TCC para a FATEC Jundiaí.
+Jogo com tema de Cibersegurança, desenvolvido em C# como TCC para a FATEC Jundiaí.
