@@ -29,19 +29,22 @@ font_data = ExtResource( 1 )
 script = ExtResource( 3 )
 
 [node name="spr_Menu" type="Sprite" parent="."]
+position = Vector2( 404, 302 )
 texture = ExtResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 403, 298 )
 zoom = Vector2( 0.78, 1 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_left = -352.0
-margin_top = 66.0
-margin_right = -245.0
-margin_bottom = 140.0
+margin_left = 37.0
+margin_top = 446.0
+margin_right = 193.0
+margin_bottom = 522.0
+rect_rotation = 0.601418
 
 [node name="btn_start" type="Button" parent="VBoxContainer"]
-margin_right = 107.0
+margin_right = 156.0
 margin_bottom = 22.0
 theme = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -50,7 +53,7 @@ text = "Start"
 
 [node name="btn_load" type="Button" parent="VBoxContainer"]
 margin_top = 26.0
-margin_right = 107.0
+margin_right = 156.0
 margin_bottom = 48.0
 theme = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -59,7 +62,7 @@ text = "Start"
 
 [node name="btn_options" type="Button" parent="VBoxContainer"]
 margin_top = 52.0
-margin_right = 107.0
+margin_right = 156.0
 margin_bottom = 74.0
 theme = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )

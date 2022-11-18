@@ -1,5 +1,5 @@
 extends Control
-Button btn_start = But
+# Button btn_start = But
 
 
 # Called when the node enters the scene tree for the first time.
