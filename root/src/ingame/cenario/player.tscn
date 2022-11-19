@@ -2,6 +2,7 @@
 
 [ext_resource path="res://assets/art/ingame/scenario/player/idle_left.tres" type="Animation" id=1]
 [ext_resource path="res://assets/art/ingame/scenario/player/player_animation.png" type="Texture" id=2]
+[ext_resource path="res://assets/art/ingame/scenario/player/walk_left.tres" type="Animation" id=3]
 [ext_resource path="res://assets/art/ingame/scenario/player/idle_down.tres" type="Animation" id=4]
 [ext_resource path="res://assets/art/ingame/scenario/player/walk_down.tres" type="Animation" id=5]
 [ext_resource path="res://assets/art/ingame/scenario/player/idle_right.tres" type="Animation" id=6]
@@ -24,8 +25,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 0 ]
 }
-
-[sub_resource type="GDScript" id=1]
 
 [sub_resource type="AnimationNodeAnimation" id=2]
 animation = "idle_down"
@@ -92,8 +91,8 @@ start_node = "idle"
 extents = Vector2( 5, 5 )
 
 [node name="player" type="KinematicBody2D"]
-position = Vector2( 34, 83 )
-collision_mask = 3
+position = Vector2( -1, 1 )
+collision_mask = 6
 script = ExtResource( 7 )
 
 [node name="animation" type="AnimationPlayer" parent="."]
@@ -103,12 +102,13 @@ anims/idle_left = ExtResource( 1 )
 anims/idle_right = ExtResource( 6 )
 anims/idle_up = ExtResource( 8 )
 anims/walk_down = ExtResource( 5 )
-anims/walk_left = ExtResource( 9 )
+anims/walk_left = ExtResource( 3 )
 anims/walk_right = ExtResource( 10 )
 anims/walk_up = ExtResource( 9 )
 
 [node name="camera" type="Camera2D" parent="."]
 current = true
+zoom = Vector2( 0.5, 0.5 )
 limit_smoothed = true
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
@@ -118,7 +118,6 @@ drag_margin_top = 0.4
 drag_margin_right = 0.4
 drag_margin_bottom = 0.4
 editor_draw_drag_margin = true
-script = SubResource( 1 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 14 )
@@ -126,7 +125,7 @@ anim_player = NodePath("../animation")
 active = true
 parameters/playback = SubResource( 15 )
 parameters/idle/blend_position = Vector2( 0.891708, 0.130058 )
-parameters/walk/blend_position = Vector2( 0.0402228, -0.806358 )
+parameters/walk/blend_position = Vector2( 0.10953, -0.713873 )
 
 [node name="sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )

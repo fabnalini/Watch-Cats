@@ -10,9 +10,8 @@
 [ext_resource path="res://assets/art/ingame/scenario/home/room/mesa-grande.png" type="Texture" id=8]
 [ext_resource path="res://assets/art/ingame/scenario/home/kitchen/pia-grande.png" type="Texture" id=9]
 [ext_resource path="res://src/ingame/cenario/player.tscn" type="PackedScene" id=10]
-[ext_resource path="res://src/objects/casa/porta.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/ingame/cenario/casa/porta.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/ingame/cenario/casa/casa.gd" type="Script" id=12]
-
 
 [sub_resource type="ConvexPolygonShape2D" id=27]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -581,7 +580,11 @@ extents = Vector2( 15.5, 10.125 )
 extents = Vector2( 19, 8.5 )
 
 [node name="cozinha" type="Node2D"]
+position = Vector2( 1, 0 )
 script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="player" parent="." instance=ExtResource( 10 )]
 position = Vector2( 0, 0 )
@@ -605,6 +608,8 @@ position = Vector2( 81, 20 )
 texture = ExtResource( 5 )
 
 [node name="cadeiras" type="StaticBody2D" parent="Objetos"]
+collision_layer = 2
+collision_mask = 0
 
 [node name="Cadeira-dir" type="Sprite" parent="Objetos/cadeiras"]
 position = Vector2( 105, 87 )
@@ -623,6 +628,8 @@ position = Vector2( 47, 87 )
 shape = SubResource( 46 )
 
 [node name="geladeira" type="StaticBody2D" parent="Objetos"]
+collision_layer = 2
+collision_mask = 0
 
 [node name="Geladeira" type="Sprite" parent="Objetos/geladeira"]
 position = Vector2( 47, 46 )
@@ -633,6 +640,8 @@ position = Vector2( 47, 50 )
 shape = SubResource( 42 )
 
 [node name="fogao" type="StaticBody2D" parent="Objetos"]
+collision_layer = 2
+collision_mask = 0
 
 [node name="Fogao" type="Sprite" parent="Objetos/fogao"]
 position = Vector2( 126, 50 )
@@ -643,6 +652,8 @@ position = Vector2( 126, 52 )
 shape = SubResource( 43 )
 
 [node name="pia" type="StaticBody2D" parent="Objetos"]
+collision_layer = 2
+collision_mask = 0
 
 [node name="Pia-grande" type="Sprite" parent="Objetos/pia"]
 position = Vector2( 83, 47 )
@@ -653,6 +664,8 @@ position = Vector2( 83, 48.875 )
 shape = SubResource( 41 )
 
 [node name="mesa" type="StaticBody2D" parent="Objetos"]
+collision_layer = 2
+collision_mask = 0
 
 [node name="Mesa-grande" type="Sprite" parent="Objetos/mesa"]
 position = Vector2( 76, 87 )
