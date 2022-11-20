@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://assets/art/ingame/scenario/home/kitchen/tileset-ladrilho.png" type="Texture" id=1]
 [ext_resource path="res://assets/art/ingame/scenario/home/bathroom/banheira.png" type="Texture" id=3]
@@ -566,6 +566,9 @@ extents = Vector2( 11, 11 )
 [sub_resource type="RectangleShape2D" id=38]
 extents = Vector2( 11.5, 6.5 )
 
+[sub_resource type="StreamTexture" id=53]
+load_path = "res://.import/janela-pequena.png-cba219b89769a04ee3dad42412fbee81.stex"
+
 [node name="banheiro" type="Node2D"]
 position = Vector2( 0, -1 )
 script = ExtResource( 8 )
@@ -620,7 +623,7 @@ shape = SubResource( 38 )
 
 [node name="Janela-pequena" type="Sprite" parent="Objetos"]
 position = Vector2( 69, 22 )
-texture = ExtResource( 4 )
+texture = SubResource( 53 )
 
 [node name="player" parent="." instance=ExtResource( 6 )]
 position = Vector2( 0, 0 )

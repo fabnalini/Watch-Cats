@@ -496,7 +496,7 @@ position = Vector2( 137, 31 )
 texture = ExtResource( 10 )
 
 [node name="quarto" parent="." instance=ExtResource( 8 )]
-position = Vector2( 137, 35 )
+position = Vector2( 137, 39 )
 
 [node name="quartopos" type="Position2D" parent="."]
 position = Vector2( 136, 62 )
