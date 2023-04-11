@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/art/ingame/stage/minigame 1/nave_enemy.png" type="Texture" id=1]
+[ext_resource path="res://src/ingame/stage/minigame1/naves/enemy-ship.gd" type="Script" id=2]
+
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("NaveEnemy:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "enemy_idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("NaveEnemy:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 6.5, 11.5 )
+
+[node name="enemy-ship" type="Area2D" groups=["enemies"]]
+collision_layer = 64
+collision_mask = 32
+script = ExtResource( 2 )
+
+[node name="NaveEnemy" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 2 )
+anims/enemy_idle = SubResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.5, 0.5 )
+shape = SubResource( 7 )
+
+[connection signal="body_entered" from="." to="." method="_on_enemyship_body_entered"]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/old_icon.png-312c03dea923417589606ca2c23104ad.stex"
+path="res://.import/tela.png-1083044ee52f33264d228ffe562e092d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://old_icon.png"
-dest_files=[ "res://.import/old_icon.png-312c03dea923417589606ca2c23104ad.stex" ]
+source_file="res://assets/art/ingame/stage/minigame 4/tela.png"
+dest_files=[ "res://.import/tela.png-1083044ee52f33264d228ffe562e092d.stex" ]
 
 [params]
 
