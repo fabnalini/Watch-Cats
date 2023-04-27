@@ -30,6 +30,8 @@ func _process(delta):
 	maxCombo()
 	setLabels()
 	pauseTime()
+	if Input.is_action_pressed("menu"):
+		get_tree().change_scene("res://src/interface/menu.tscn")
 	
 func setLabels():
 	$Labels/lblScore.text = str("Score: ",Global.Score)

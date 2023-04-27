@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://assets/fonts/PressStart2P.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://assets/art/interface/menu/menu.png" type="Texture" id=2]
+[ext_resource path="res://assets/fonts/MonsterFriendFore - Opstions.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://src/interface/menu.gd" type="Script" id=3]
+[ext_resource path="res://assets/art/interface/menu/menu_screen.png" type="Texture" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.815686, 0.152941, 0.152941, 1 )
@@ -59,20 +59,21 @@ border_color = Color( 0.8, 0.8, 0.8, 0 )
 [node name="Menu" type="Control"]
 script = ExtResource( 3 )
 
-[node name="spr_Menu" type="Sprite" parent="."]
-position = Vector2( 403, 301 )
-texture = ExtResource( 2 )
+[node name="MenuScreen" type="Sprite" parent="."]
+position = Vector2( 402, 299 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
 
 [node name="menu" type="VBoxContainer" parent="."]
-margin_left = 42.0
-margin_top = 354.0
-margin_right = 264.0
-margin_bottom = 470.0
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 272.0
+margin_bottom = 193.0
 focus_neighbour_top = NodePath("btn_options")
 size_flags_vertical = 3
 alignment = 1
 __meta__ = {
-"_edit_use_anchors_": true
+"_edit_group_": true
 }
 
 [node name="btn_start" type="Button" parent="menu"]
@@ -123,3 +124,6 @@ icon_align = 1
 
 [connection signal="focus_entered" from="menu/btn_start" to="." method="_on_btn_start_focus_entered"]
 [connection signal="focus_exited" from="menu/btn_start" to="." method="_on_btn_start_focus_exited"]
+[connection signal="pressed" from="menu/btn_load" to="." method="_on_btn_load_pressed"]
+[connection signal="focus_entered" from="menu/btn_options" to="." method="_on_btn_options_focus_entered"]
+[connection signal="focus_exited" from="menu/btn_options" to="." method="_on_btn_options_focus_exited"]

@@ -17,7 +17,8 @@ func _process(delta):
 	_on_Timer_timeout()
 	getRound()
 	modulate_check()
-
+	if Input.is_action_pressed("menu"):
+		get_tree().change_scene("res://src/interface/menu.tscn")
 func getRound():
 	points.set_text(str("Pontos:", Global.pontos_dano))
 	rounds()

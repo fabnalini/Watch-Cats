@@ -5,7 +5,12 @@ var lugar
 
 # DIALOGO
 var obj
-var btnSim
+var areaOn
+
+#MINIGAME 1
+var pacotes = 0
+var dano = 5
+var Boss_life
 
 #MINIGAME 2
 var tipo_dano = -1 # 0 = desvia, 1 = soco fraco, 2 = soco forte
@@ -26,3 +31,12 @@ var sensorRight
 var turno = false
 var yes = false
 
+#Music Cens
+var Telas = false
+var AUX = 0
+var visibl = false
+
+
+func _process(delta):
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().quit()

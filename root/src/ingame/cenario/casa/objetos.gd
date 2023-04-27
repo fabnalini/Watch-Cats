@@ -5,20 +5,13 @@ onready var player = $"../../player"
 onready var cama_animation = $"../cama/Animation"
 onready var comp_animation = $"../computador/Animation"
 onready var janela_animation = $"../janelas/Animation"
-		
-func hackeando():
-	if(Input.is_action_just_pressed("game1")):
-		get_tree().change_scene("res://src/ingame/stage/minigame1/rat-attack.tscn")
-	if(Input.is_action_just_pressed("game2")):
-		get_tree().change_scene("res://src/ingame/stage/minigame2/monkey-out.tscn")
-	if(Input.is_action_just_pressed("game3")):
-		get_tree().change_scene("res://src/ingame/stage/minigame3/MuuGame.tscn")
+onready var timer = $"../../Timer"
 
 func _physics_process(_delta: float) -> void:
 	caixaAberta()
 	
 func caixaAberta():
-	if(Global.btnSim == true):
+	if(Global.areaOn == true):
 		match Global.obj:
 			"cama":
 				dormiu()
@@ -45,8 +38,10 @@ func acordou():
 func programando():
 	comp_animation.play("programando")
 	player.visible = false
-	hackeando()
+	get_tree().change_scene("res://src/ingame/stage/computador/tela-computador.tscn")
 	
 func nao_programando():
 	comp_animation.play("vazio")
 	player.visible = true
+	
+	
